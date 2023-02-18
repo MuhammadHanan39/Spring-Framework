@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean class="com.IOC_container.Student" name="S1">
+       <constructor-arg value="79" type="int"/>
+        <property name="studentName" value="Hanan Shaikh"/>
+        <property name="studentAddress" value="Naseem Nagar"/>
+    </bean>
+
+    <bean class="com.IOC_container.Address" name="add1">
+        <constructor-arg value="Hyd"/>
+        <constructor-arg value="Sindh"/>
+        <constructor-arg value="Pakistan"/>
+    </bean>
+
+    <bean class="com.IOC_container.Employee" name="E1">
+        <constructor-arg value="39" type="int"/>
+        <constructor-arg value="Hannan Shaikh"/>
+        <constructor-arg>
+            <ref bean="add1"></ref>
+        </constructor-arg>
+    </bean>
+</beans>
